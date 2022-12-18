@@ -2,8 +2,9 @@ import Move.CorrectMove;
 import PrintGameBoard.PrintGame;
 import UserInput.UserInputReader;
 import map.map1;
-//import java.sql.SQLException;
+
 import java.util.Scanner;
+
 import static UserInput.UserInputReader.FirstName;
 
 public class Main {
@@ -33,7 +34,7 @@ public class Main {
         if (Start.matches(Inp.getInput().toLowerCase())) {
             do {
                 printMap.printMap(map.getGameBoard());
-                System.out.print("Where would you like to move ?");
+                System.out.print("Where would you like to move?");
                 input = sc.nextLine();
 
 
