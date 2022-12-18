@@ -21,7 +21,7 @@ public class UserInputReader {
 
     public void begin(){
 
-        System.out.print("Whats your name");
+        System.out.print("Whats your name?");
         FirstName = sc.nextLine();
         System.out.println("Hi "+FirstName+", Would you like to start a new game [y]  or continue an old one [c] ?");
         input = sc.nextLine();

@@ -18,10 +18,10 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         String input;
-        String balFel = "bal fel";
-        String jobbFel = "jobb fel";
-        String balLe = "bal le";
-        String jobbLe = "jobb le";
+        String NW = "nw";
+        String NE = "ne";
+        String SW = "sw";
+        String SE = "se";
         String exit = "esc";
         String Start = "y";
         int score = 0;
@@ -33,32 +33,32 @@ public class Main {
         if (Start.matches(Inp.getInput().toLowerCase())) {
             do {
                 printMap.printMap(map.getGameBoard());
-                System.out.print("Add meg merre szeretnél lépni [jobb/bal le/fel] => ");
+                System.out.print("Where would you like to move ?");
                 input = sc.nextLine();
 
 
-                if (balFel.matches(input.toLowerCase()) && (foxRow != 0 && foxCol != 0) && correctMove.moveCheck(map.getGameBoard(), foxRow - 1, foxCol - 1)) {
+                if (NW.matches(input.toLowerCase()) && (foxRow != 0 && foxCol != 0) && correctMove.moveCheck(map.getGameBoard(), foxRow - 1, foxCol - 1)) {
                     map.setFoxPlace(foxRow - 1, foxCol - 1);
                     map.setBoard(foxRow - 1, foxCol - 1, 1);
                     map.setBoard(foxRow, foxCol, 0);
                     foxRow--;
                     foxCol--;
                     stepped = true;
-                } else if (jobbFel.matches(input.toLowerCase()) && (foxRow != 0 && foxCol != 7) && correctMove.moveCheck(map.getGameBoard(), foxRow - 1, foxCol + 1)) {
+                } else if (NE.matches(input.toLowerCase()) && (foxRow != 0 && foxCol != 7) && correctMove.moveCheck(map.getGameBoard(), foxRow - 1, foxCol + 1)) {
                     map.setFoxPlace(foxRow - 1, foxCol + 1);
                     map.setBoard(foxRow - 1, foxCol + 1, 1);
                     map.setBoard(foxRow, foxCol, 0);
                     foxRow--;
                     foxCol++;
                     stepped = true;
-                } else if (balLe.matches(input.toLowerCase()) && (foxRow != 7 && foxCol != 0) && correctMove.moveCheck(map.getGameBoard(), foxRow + 1, foxCol - 1)) {
+                } else if (SW.matches(input.toLowerCase()) && (foxRow != 7 && foxCol != 0) && correctMove.moveCheck(map.getGameBoard(), foxRow + 1, foxCol - 1)) {
                     map.setFoxPlace(foxRow + 1, foxCol - 1);
                     map.setBoard(foxRow + 1, foxCol - 1, 1);
                     map.setBoard(foxRow, foxCol, 0);
                     foxRow++;
                     foxCol--;
                     stepped = true;
-                } else if (jobbLe.matches(input.toLowerCase()) && (foxRow != 7 && foxCol != 7) && correctMove.moveCheck(map.getGameBoard(), foxRow + 1, foxCol + 1)) {
+                } else if (SE.matches(input.toLowerCase()) && (foxRow != 7 && foxCol != 7) && correctMove.moveCheck(map.getGameBoard(), foxRow + 1, foxCol + 1)) {
                     map.setFoxPlace(foxRow + 1, foxCol + 1);
                     map.setBoard(foxRow + 1, foxCol + 1, 1);
                     map.setBoard(foxRow, foxCol, 0);
