@@ -142,7 +142,7 @@ public class Main {
 
                 }
                 if (map.getFoxPlace()[0] == 7) {
-                    System.out.println("Congratulation! You won");
+                    System.out.println("Congratulation! You won!");
                     score=1;
                     System.out.println("Dear"+ FirstName +" Your score: "+ score);
                     System.out.println("+" + score + " score saved!");
